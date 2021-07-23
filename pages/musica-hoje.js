@@ -2,6 +2,8 @@ import useSWR from 'swr'
 
 import Head from 'next/head'
 import CardMusic from '../components/CardMusic'
+import Navbar from '../components/Navbar'
+
 import getRoutersJson from '../utils/axios-api'
 
 export default function Teste() {
@@ -38,10 +40,7 @@ export default function Teste() {
       </Head>
 
       <div className="page-full rotated">
-        <div className="header-navbar">
-          <p>Músicas mais ouvidas</p>
-          <p>Playlista da semana</p>
-        </div>
+       <Navbar />
 
         <div className="dm-poster__container">
             <CardMusic music={(data.data.music)}/>

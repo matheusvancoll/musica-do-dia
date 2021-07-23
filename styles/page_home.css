@@ -6,6 +6,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .header-navbar p {
@@ -22,7 +23,7 @@
 }
 
 .dm-poster-main {
-  width: 70%;
+  width: 80%;
   height: 17rem;
   padding: 1rem;
   display: flex;
@@ -41,7 +42,7 @@
 }
 
 .dm-poster-main a {
-  width: 65%;
+  width: 75%;
   margin-top: 2rem;
   font-family: 'Monoton', cursive;
   text-align: center;

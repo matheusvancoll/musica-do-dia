@@ -4,8 +4,8 @@ export default function MainPoster() {
     <div className="main-poster">
       <div className="header-navbar">
           <p>Músicas mais ouvidas</p>
-          <p>Playlista da semana</p>
-      </div>
+          <p>Playlist da semana</p>
+        </div>
   </div>
   )
 }

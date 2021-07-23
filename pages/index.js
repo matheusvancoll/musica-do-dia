@@ -1,5 +1,7 @@
 import Link from 'next/link'
+
 import Head from 'next/head'
+import Navbar from '../components/Navbar'
 
 export default function Home() {
 
@@ -15,10 +17,7 @@ export default function Home() {
       </Head>
 
       <div className="page-full">
-        <div className="header-navbar">
-          <p>Músicas mais ouvidas</p>
-          <p>Playlista da semana</p>
-        </div>
+        <Navbar />
 
         <div className="dm-poster__container">
           <div className="dm-poster-main">
