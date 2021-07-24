@@ -62,3 +62,32 @@
   color: #EA731D;
   width: 55%;
 }
+
+
+@media screen and (min-width: 768px) {
+  .dm-info-main h4 {
+    font-size: 1.75rem;
+  }
+
+  .dm-info-main h1 {
+    font-size: 4rem;
+  }
+
+  .dm-info-generics h5 {
+    font-size: 1.25rem;
+  }
+
+  .dm-info-generics {
+    margin-bottom: 3rem;
+  }
+
+  .dm-info-links a {
+    width: 25%;
+    padding: 0.75rem;
+    font-size: 1.15rem;
+  }
+
+  .dm-info-links a:hover {
+    width: 30%;
+  }
+}
