@@ -1,11 +1,22 @@
-export default function MainPoster() {
+import Link from 'next/link'
 
+
+export default function MainPoster() {
   return (
     <div className="main-poster">
       <div className="header-navbar">
-          <p>Músicas mais ouvidas</p>
-          <p>Playlist da semana</p>
-        </div>
+        <Link href="/">
+          <a>Início</a>
+        </Link>
+
+        <Link href="/musica-hoje">
+          <a>Recomendação de Hoje</a>
+        </Link>
+
+        <Link href="/sugerir-musica">
+          <a>Sugerir Música</a>
+        </Link> 
+      </div>
   </div>
   )
 }

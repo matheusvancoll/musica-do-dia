@@ -4,10 +4,10 @@ export default async function insertHintMusic(req, res) {
   
   if (req.method === "POST") {
 
-    const { musicHint, author } = req.body
+    const { musicHint } = req.body
 
     // Verifica se os campos estão vazios
-    if( !musicHint || !author) {
+    if( !musicHint) {
       res.status(400).json({message: "Missing body data"})
       return
     }
@@ -15,9 +15,9 @@ export default async function insertHintMusic(req, res) {
     // Conecta ao DB e insere os valores indicados
     const { db } = await ConnectDatabase()
     const dataHintMusic = await db.collection('music_hint').insertOne({
-      musicHint,
-      author
+      musicHint
     })
+    console.log("Info registrada com sucesso")
 
     res.status(200).json(dataHintMusic)
   } else {
