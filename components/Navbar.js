@@ -1,17 +1,33 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
+const links = [
+  { href: '/', label: 'Início' },
+  { href: '/musica-hoje', label: 'Hoje' },
+  { href: '/historico', label: 'Histórico' },
+]
 
-export default function MainPoster() {
+export default function Navbar() {
+  const { pathname } = useRouter()
+
   return (
-    <div className="main-poster">
-      <div className="header-navbar">
-        <Link href="/">Início</Link>
+    <header className="nav">
+      <Link href="/" className="nav__brand">
+        <span className="nav__disc" aria-hidden="true" />
+        <span>Música do dia</span>
+      </Link>
 
-        <Link href="/musica-hoje">Recomendação de Hoje</Link>
-
-        <Link href="/historico">Histórico</Link>
-      </div>
-  </div>
+      <nav className="nav__links">
+        {links.map(l => (
+          <Link
+            key={l.href}
+            href={l.href}
+            className={pathname === l.href ? 'nav__link is-active' : 'nav__link'}
+          >
+            {l.label}
+          </Link>
+        ))}
+      </nav>
+    </header>
   )
 }
-
