@@ -1,6 +1,10 @@
 export default function CardMusic(props) {
   return(
     <div className="dm-card">
+      {props.music.cover && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={props.music.cover} alt={`Capa de ${props.music.album}`} width={250} height={250} style={{ borderRadius: 8 }} />
+      )}
       <div className="dm-info-main">
         <h4>Música do dia:</h4>
         <h1>{props.music.name} - {props.music.author}</h1>

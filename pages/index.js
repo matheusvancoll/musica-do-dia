@@ -22,14 +22,12 @@ export default function Home() {
         <div className="dm-poster__container">
           <div className="dm-poster-main">
             <h4>Música do dia</h4>
-            <Link href="/musica-hoje">
-              <a>Conferir</a>
-            </Link>
+            <Link href="/musica-hoje">Conferir</Link>
           </div>
         </div>
 
         <footer className="home-footer">
-          <p>Powered by: <a href="intagram/matheusvancoll" target="_blank">Matheus Vancoll</a></p>
+          <p>Powered by: <a href="https://www.instagram.com/matheusvancoll/" target="_blank" rel="noreferrer">Matheus Vancoll</a></p>
         </footer>
       </div>
 

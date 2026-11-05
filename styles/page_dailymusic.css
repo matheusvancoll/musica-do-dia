@@ -64,38 +64,6 @@
 }
 
 
-/* Musica Hint */
-.form-music-hint {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.form-music-hint input {
-  width: 65%;
-  height: 2rem;
-  margin: 1rem;
-  text-align: center;
-  border-radius: 10px;
-  border: none;
-}
-
-.form-music-hint button {
-  width: 35%;
-  height: 2rem;
-  border: none;
-  background-color: #000;
-  color: #FFF;
-  border-radius: 10px;
-  transition: .5s;
-}
-
-.form-music-hint button:hover {
-  background-color: #FFF;
-  color: #000;
-}
-
 @media screen and (min-width: 768px) {
   .dm-info-main h4 {
     font-size: 1.75rem;
@@ -122,4 +90,116 @@
   .dm-info-links a:hover {
     width: 30%;
   }
+}
+
+/* Histórico */
+.dm-history__title {
+  margin: 1.5rem 0 1rem;
+  color: #FFF;
+  font-family: 'Monda', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.dm-history__state {
+  color: #FFF;
+  text-align: center;
+}
+
+.dm-history__wrapper {
+  width: 92%;
+  max-width: 960px;
+  margin: 0 auto 2rem;
+  overflow: hidden;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dm-history__table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #FFF;
+  font-family: 'Monda', sans-serif;
+  text-align: center;
+}
+
+.dm-history__table th,
+.dm-history__table td {
+  padding: 0.85rem 0.75rem;
+}
+
+.dm-history__table thead {
+  background: #000;
+}
+
+.dm-history__table th {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.dm-history__table tbody tr {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background .3s;
+}
+
+.dm-history__table tbody tr:first-child {
+  background: rgba(234, 115, 29, 0.35);
+}
+
+.dm-history__table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.dm-history__table a {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 8px;
+  background: #EA731D;
+  color: #FFF;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.dm-history__table a:hover {
+  background: #000;
+  color: #EA731D;
+}
+
+/* Celular: cada linha vira um cartão */
+@media screen and (max-width: 640px) {
+  .dm-history__table thead {
+    display: none;
+  }
+
+  .dm-history__table,
+  .dm-history__table tbody,
+  .dm-history__table tr,
+  .dm-history__table td {
+    display: block;
+    width: 100%;
+  }
+
+  .dm-history__table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    text-align: right;
+  }
+
+  .dm-history__table td::before {
+    content: attr(data-label);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+}
+
+/* Centraliza o histórico verticalmente entre o menu e o rodapé */
+.dm-history {
+  flex: 1;
+  justify-content: center;
 }

@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# banco SQLite local
+/data/*.db*

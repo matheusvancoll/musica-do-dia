@@ -9,7 +9,7 @@ import getRoutersJson from '../utils/axios-api'
 
 export default function Teste() {
 
-  const { data, error } = useSWR('/api/mongodb-api/get-today-music', getRoutersJson)
+  const { data, error } = useSWR('/api/music/get-today-music', getRoutersJson)
 
   if (error) return (
     RenderPage("Ops, não conseguimos carregar as informações")
