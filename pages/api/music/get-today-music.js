@@ -1,14 +1,10 @@
-import getDb, { toMusic } from '../../../utils/db'
-import { todayISO } from '../../../utils/dates'
+import { toMusic } from '../../../utils/db'
+import { ensureMusicOfDay } from '../../../utils/saveMusic'
 
+// Devolve a música de hoje. Se ainda não existe, o app escolhe uma no Deezer e salva.
 export default async function GetTodayMusic(req, res) {
   try {
-    const db = await getDb()
-    const { rows } = await db.execute({ sql: 'SELECT * FROM music_day WHERE day = ?', args: [todayISO()] })
-    const row = rows[0]
-    if (row) {
-      await db.execute({ sql: 'UPDATE music_day SET amount_view = amount_view + 1 WHERE id = ?', args: [row.id] })
-    }
+    const row = await ensureMusicOfDay()
     res.status(200).json({ music: toMusic(row) })
   } catch (err) {
     console.error(err)
